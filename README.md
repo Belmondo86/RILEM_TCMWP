@@ -233,5 +233,4 @@ consistent and easy to maintain.
 ---
 
 ## Licence
-RILEM TC MWP — free to use for all members of the TC group.
-M.Belmokhtar-Université Gustave Eiffel
+RILEM TC MWP — free to use for all members of the TC group — M.Belmokhtar (Université Gustave Eiffel).
