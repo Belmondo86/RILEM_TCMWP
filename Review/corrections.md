@@ -671,3 +671,102 @@ TABLES_DIR = "AI_tables"     # AI-generated lookup CSVs
 
   12/12 passed
 ```
+
+---
+
+## Session 11 — Flowchart Graphviz + README non-expert
+*2026-06-13 08:50*
+
+### O-12 · Flowchart régénéré avec Graphviz (DOT)
+
+**Logiciel :** [Graphviz](https://graphviz.org) — `dot` version 2.43
+**Source :** `flowchart_local.dot`
+**Commande de génération :** `dot -Tpng -Gdpi=150 flowchart_local.dot -o flowchart_local.png`
+
+Avantages par rapport à Python/Matplotlib :
+- Placement automatique des nœuds et arêtes (`rankdir=TB`)
+- Flèches orthogonales (`splines=ortho`) — propres et alignées
+- Sous-graphes avec bordure (`cluster_ai`, `cluster_viz`)
+- Source texte lisible et versionnable (`.dot`)
+- Aucune coordonnée manuelle à calculer
+
+Améliorations visuelles :
+- Panneau orange AI_tables/ avec les 6 CSV individuels et leur nombre de lignes
+- Annotation ✏ "Edit in Excel to correct AI classifications"
+- Flèches couleur distincte par type (orange = tables, violet = helpers)
+- Nœuds de sortie en forme de note (`shape=note`)
+- run_local.py visible comme orchestrateur
+
+### O-13 · README réécrit pour les non-experts
+
+Structure révisée :
+- Ouverture : explication en une phrase de ce que fait le programme
+- Section "What you get" : description humaine de chaque figure produite
+- Section "What you need" : pré-requis en langage simple + explication pip
+- Section "How to install" : structure de dossier illustrée
+- Section "How to run" : une commande + explication du dialogue de dossier
+- Section "How to configure" : commentaires dans les exemples de code
+- Section "How to correct the AI classifications" :
+  - Explication du rôle des AI_tables
+  - ⚠ Avertissement clair "ces tables ont été générées par une IA"
+  - Workflow de correction en 4 étapes
+  - Exemple concret (AIP Advances)
+- Section "File descriptions" : tableau avec colonne "Should you edit it?"
+- Section pipeline : diagramme Mermaid + explication en prose simple
+- Section méthodologie : explication du workflow IA en langage courant
+
+---
+
+## Résultats des tests — Session 11
+*2026-06-13 08:50*
+
+```
+  ✓  flowchart_local.dot    syntaxe DOT valide, PNG généré sans erreur
+  ✓  README.md              282 lignes, sections clés présentes
+  ✓  Mermaid diagram        intégré dans README (rendu natif GitHub)
+```
+
+---
+
+## Session 12 — Tests finaux + livraison GitHub complète
+*2026-06-23 11:20*
+
+### C-25 · Licence mise à jour dans README.md
+
+```
+# Avant
+MIT — free to use, modify and share, with attribution.
+
+# Après
+RILEM TC MWP — free to use for all members of the TC group.
+```
+
+### C-26 · Relecture README
+
+Vérifications automatiques : liens internes, blocs de code fermés, doubles espaces.
+Aucun problème détecté.
+
+---
+
+## Résultats des tests — Session 12
+*2026-06-23 11:20*
+
+```
+  ✓  syntax:main.py
+  ✓  syntax:biblio_data.py
+  ✓  syntax:biblio_viz.py
+  ✓  syntax:run_local.py
+  ✓  no_prints                    clean
+  ✓  no_unused_imports            clean
+  ✓  AI_tables:schema_clean       all valid
+  ✓  load_tables:ok               6 tables loaded
+  ✓  _infer_doc_type:13           13/13 pass
+  ✓  _infer_publisher:8           all pass
+  ✓  author_short_label:8         all pass
+  ✓  clean_doi:6                  all pass
+  ✓  run_local:full               8 PNGs + report.txt ✓
+  ✓  readme:sections              all sections present
+  ✓  graphviz_dot:valid           renders OK
+
+  15/15 passed
+```

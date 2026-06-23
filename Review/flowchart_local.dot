@@ -1,0 +1,193 @@
+digraph pipeline {
+
+  // ── Global layout ──────────────────────────────────────────────────────────
+  graph [
+    rankdir    = TB
+    splines    = ortho
+    nodesep    = 0.55
+    ranksep    = 0.70
+    fontname   = "Helvetica Neue"
+    fontsize   = 11
+    bgcolor    = "#F7F9FC"
+    pad        = 0.5
+    label      = "Local bibliometric pipeline\nFunction call graph  ·  no internet required"
+    labelloc   = t
+    labeljust  = c
+    fontsize   = 14
+    fontcolor  = "#0D1B2A"
+  ]
+
+  node [
+    shape     = box
+    style     = "filled,rounded"
+    fontname  = "Helvetica Neue"
+    fontsize  = 10
+    fontcolor = white
+    margin    = "0.18,0.10"
+    penwidth  = 0
+  ]
+
+  edge [
+    fontname  = "Helvetica Neue"
+    fontsize  = 9
+    color     = "#5A6070"
+    arrowsize = 0.8
+    penwidth  = 1.2
+  ]
+
+  // ── INPUT ──────────────────────────────────────────────────────────────────
+  CSV [
+    label     = "info_DOI_MWP.csv\n(Authors · Year · Title · Journal · DOI)"
+    fillcolor = "#1D9E75"
+    shape     = note
+    fontsize  = 10
+  ]
+
+  // ── AI_TABLES subgraph ─────────────────────────────────────────────────────
+  subgraph cluster_ai {
+    label      = "AI_tables/   ✏  Edit in Excel to correct classifications"
+    style      = "filled,dashed"
+    fillcolor  = "#FBF0E4"
+    color      = "#B06A10"
+    fontcolor  = "#B06A10"
+    fontsize   = 10
+    fontname   = "Helvetica Neue Bold"
+    margin     = 14
+
+    node [fillcolor="#B06A10" fontsize=9]
+
+    t_book_doi  [label="AI_table_book_doi.csv\n3 rows"]
+    t_conf_doi  [label="AI_table_conf_doi.csv\n6 rows"]
+    t_conf_kw   [label="AI_table_conf_keywords.csv\n17 rows"]
+    t_book_kw   [label="AI_table_book_keywords.csv\n7 rows"]
+    t_pub_doi   [label="AI_table_publisher_doi.csv\n15 rows"]
+    t_pub_name  [label="AI_table_publisher_name.csv\n23 rows"]
+  }
+
+  // ── LOAD TABLES ────────────────────────────────────────────────────────────
+  load_tables [
+    label     = "load_tables(AI_tables/)\nbiblio_data.py"
+    fillcolor = "#B06A10"
+    fontsize  = 10
+  ]
+
+  // ── DATA LAYER ─────────────────────────────────────────────────────────────
+  node [fillcolor="#2E86AB"]
+
+  load_dataset [label="load_dataset(info_csv, tables)\nbiblio_data.py"]
+  load_csv     [label="_load_info_csv()\nCSV → info_lookup dict"]
+  build_info   [label="_build_from_info(info, tables)\nassemble DataFrame"]
+
+  // ── INFERENCE HELPERS ──────────────────────────────────────────────────────
+  node [fillcolor="#7F77DD" fontsize=9]
+
+  infer_type [label="_infer_doc_type(journal, doi, tables)"]
+  infer_pub  [label="_infer_publisher(journal, doi, tables)"]
+
+  // ── DATAFRAME ──────────────────────────────────────────────────────────────
+  df [
+    label     = "DataFrame\ndoi · year · journal · type · publisher · authors …"
+    fillcolor = "#555E70"
+    fontsize  = 10
+  ]
+
+  // ── REPORT ─────────────────────────────────────────────────────────────────
+  node [fillcolor="#2E86AB" fontsize=10]
+  save_report [label="save_summary_report()\nbiblio_data.py"]
+
+  // ── VIZ LAYER ──────────────────────────────────────────────────────────────
+  node [fillcolor="#D85A30" fontsize=9]
+
+  subgraph cluster_viz {
+    label     = "biblio_viz.py"
+    style     = "filled,rounded"
+    fillcolor = "#FEF0EC"
+    color     = "#D85A30"
+    fontcolor = "#D85A30"
+    fontsize  = 10
+    margin    = 12
+
+    node [fillcolor="#D85A30"]
+
+    p_journals [label="plot_top_journals()"]
+    p_types    [label="plot_document_types()"]
+    p_authors  [label="plot_authors_per_article()"]
+    p_pub      [label="plot_publisher_share()"]
+    p_bradford [label="plot_bradford_law()"]
+    p_time     [label="plot_types_over_time()"]
+    p_network  [label="plot_coauthor_network()"]
+    p_top_auth [label="plot_top_authors()"]
+  }
+
+  // ── SHARED HELPERS (main.py) ───────────────────────────────────────────────
+  node [fillcolor="#7F77DD" fontsize=9]
+  draw_net   [label="main.draw_network()"]
+  save_fig   [label="main.save_figure()"]
+  plot_style [label="main.apply_plot_style()"]
+
+  // ── OUTPUTS ────────────────────────────────────────────────────────────────
+  node [fillcolor="#639922" fontsize=10 shape=note fontcolor=white]
+  out_report [label="report.txt\nbiblio_output/"]
+  out_pngs   [label="8 × panel_*.png\nbiblio_output/"]
+
+  // ── EDGES ──────────────────────────────────────────────────────────────────
+
+  // Tables → load_tables
+  { t_book_doi t_conf_doi t_conf_kw t_book_kw t_pub_doi t_pub_name }
+    -> load_tables [color="#B06A10" penwidth=0.8]
+
+  // CSV input → load_dataset
+  CSV -> load_dataset
+
+  // load_tables → load_dataset (tables parameter)
+  load_tables -> load_dataset [color="#B06A10" style=dashed xlabel="tables"]
+
+  // load_dataset → sub-functions
+  load_dataset -> load_csv
+  load_dataset -> build_info
+
+  // build_info → inference helpers
+  build_info -> infer_type [style=dashed color="#7F77DD"]
+  build_info -> infer_pub  [style=dashed color="#7F77DD"]
+
+  // tables feed inference
+  load_tables -> infer_type [color="#B06A10" style=dashed]
+  load_tables -> infer_pub  [color="#B06A10" style=dashed]
+
+  // → DataFrame
+  load_csv   -> df
+  build_info -> df
+  infer_type -> df [style=invis]
+  infer_pub  -> df [style=invis]
+
+  // DataFrame → report + viz
+  df -> save_report
+  df -> p_journals
+  df -> p_types
+  df -> p_authors
+  df -> p_pub
+  df -> p_bradford
+  df -> p_time
+  df -> p_network
+  df -> p_top_auth
+
+  // shared helpers
+  p_network -> draw_net   [style=dashed color="#7F77DD"]
+  plot_style -> p_journals [style=dashed color="#7F77DD" dir=back]
+
+  // → outputs
+  save_report -> out_report
+  { p_journals p_types p_authors p_pub
+    p_bradford p_time p_network p_top_auth } -> save_fig
+  save_fig -> out_pngs
+
+  // run_local.py annotation
+  run_local [
+    label     = "run_local.py\n(configuration\n& orchestration)"
+    fillcolor = "#4472C4"
+    fontsize  = 9
+    shape     = rectangle
+  ]
+  run_local -> load_dataset [style=dashed color="#4472C4"]
+  run_local -> plot_style   [style=dashed color="#4472C4"]
+}
