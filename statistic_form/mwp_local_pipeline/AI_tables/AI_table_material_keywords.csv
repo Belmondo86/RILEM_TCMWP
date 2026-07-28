@@ -1,0 +1,15 @@
+priority,label,keyword
+1,Hot Mix Asphalt (HMA),hot mixture asphalt
+1,Hot Mix Asphalt (HMA),hma
+2,Warm Mix Asphalt (WMA),warm
+3,Cold / emulsion-treated mixture,cold
+3,Cold / emulsion-treated mixture,emulsion
+4,Cement-treated / hybrid material,cement-treated
+4,Cement-treated / hybrid material,hybrid
+4,Cement-treated / hybrid material,cement asphalt
+5,Cement concrete (incl. RA concrete),concrete
+6,Binder only,binder
+7,Other asphaltic material,epoxy
+7,Other asphaltic material,steel bridge
+7,Other asphaltic material,asphalt
+7,Other asphaltic material,pavement

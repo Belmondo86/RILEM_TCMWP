@@ -1,0 +1,25 @@
+family,short_label,keyword
+LVE stiffness / complex modulus characterization,stiffness,complex modulus
+LVE stiffness / complex modulus characterization,stiffness,master curve
+LVE stiffness / complex modulus characterization,stiffness,phase angle
+LVE stiffness / complex modulus characterization,stiffness,stiffness
+LVE stiffness / complex modulus characterization,stiffness,modulus
+LVE stiffness / complex modulus characterization,stiffness,young
+LVE stiffness / complex modulus characterization,stiffness,elastic
+Damage / durability monitoring,damage,damage
+Damage / durability monitoring,damage,fatigue
+Damage / durability monitoring,damage,crack
+Damage / durability monitoring,damage,moisture
+Damage / durability monitoring,damage,freeze
+Damage / durability monitoring,damage,durab
+Damage / durability monitoring,damage,healing
+Damage / durability monitoring,damage,aging
+Damage / durability monitoring,damage,ageing
+Damage / durability monitoring,damage,monitor
+"QC / empirical correlation (strength, density, voids)",QC,strength
+"QC / empirical correlation (strength, density, voids)",QC,density
+"QC / empirical correlation (strength, density, voids)",QC,air void
+"QC / empirical correlation (strength, density, voids)",QC,compaction
+"QC / empirical correlation (strength, density, voids)",QC,quality
+"QC / empirical correlation (strength, density, voids)",QC,regression
+"QC / empirical correlation (strength, density, voids)",QC,correlation

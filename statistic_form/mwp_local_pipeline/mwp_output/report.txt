@@ -1,0 +1,43 @@
+RILEM TC MWP — UT / IRT literature review forms: summary report
+================================================================
+Articles (unique): 107   |   Coverage: 1995-2025
+Source: review forms only (no original articles, no external sources).
+
+MWP TECHNIQUE (unit: article)
+  UT only                 73  ( 68.2%)
+  IRT only                27  ( 25.2%)
+  UT + IRT                 1  (  0.9%)
+  Neither UT nor IRT       6  (  5.6%)
+
+RELEVANCE FOR TC MWP (unit: article)
+  High                                    39  ( 36.4%)
+  Medium                                  27  ( 25.2%)
+  Low                                     37  ( 34.6%)
+  Not reported                             2  (  1.9%)
+  Low/Medium (2 reviews, discordant)       2  (  1.9%)
+
+MATERIAL TYPES (multi-label, % of 107 articles, sum > 100%)
+  Hot Mix Asphalt (HMA)                   82  ( 76.6%)
+  Cement-treated / hybrid material        10  (  9.3%)
+  Cold / emulsion-treated mixture          4  (  3.7%)
+  Cement concrete (incl. RA concrete)      4  (  3.7%)
+  Other asphaltic material                 4  (  3.7%)
+  Other / not specified                    4  (  3.7%)
+  Warm Mix Asphalt (WMA)                   2  (  1.9%)
+  Binder only                              1  (  0.9%)
+
+SPECIMEN GEOMETRIES in UT/IRT blocks (multi-label, % of 95 articles)
+  Cylinder / core                         59  ( 62.1%)
+  Prism / beam                            19  ( 20.0%)
+  Disc                                    15  ( 15.8%)
+  Cube                                     4  (  4.2%)
+  Slab / plate                             4  (  4.2%)
+  Field pavement / in-situ                 3  (  3.2%)
+  Other / not specified                    1  (  1.1%)
+  Semi-circular (half-moon)                1  (  1.1%)
+
+CLASSIFICATION CATEGORY
+  Comparative study (MWP vs conventional)                  51
+  Standalone MWP study                                     43
+  MWP + conventional tests (no formal comparison)          12
+  Comparative study (MWP vs conventional) | Standalone MWP study   1

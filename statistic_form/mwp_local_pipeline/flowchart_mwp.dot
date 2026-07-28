@@ -1,0 +1,63 @@
+// Graphviz source of the MWP UT/IRT pipeline diagram.
+// Regenerate with:  dot -Tpng flowchart_mwp.dot -o flowchart_mwp.png
+digraph MWP {
+    rankdir=TB;
+    fontname="Helvetica"; node [fontname="Helvetica", fontsize=11];
+    graph [bgcolor="#F7F9FC"];
+
+    XLSX [shape=note, style=filled, fillcolor="#FFF2CC",
+          label="input_RILEM_TC_MWP\nLiterature_Review_Form.xlsx\n(109 forms / 107 articles)"];
+
+    subgraph cluster_tables {
+        label="AI_tables/   (edit in Excel to correct)"; style=dashed; color="#B45309";
+        node [shape=box, style="filled,rounded", fillcolor="#FDE9D9", fontsize=10];
+        T1 [label="AI_table_technique_keywords"];
+        T2 [label="AI_table_conventional_keywords"];
+        T3 [label="AI_table_application_keywords"];
+        T4 [label="AI_table_material_keywords"];
+        T5 [label="AI_table_geometry_keywords"];
+        T6 [label="AI_table_comparison_keywords"];
+    }
+
+    LT [shape=box, style="filled,rounded", fillcolor="#DEEBF7",
+        label="main.load_tables()"];
+    LD [shape=box, style="filled,rounded", fillcolor="#DEEBF7",
+        label="mwp_data.load_dataset()\nget_cols · validate_dataset (QC)\ndetect_techniques · classify_* \nmerge duplicate reviews"];
+    DF [shape=cylinder, style=filled, fillcolor="#D9EAD3",
+        label="article-level DataFrame\n(n = 107)"];
+    ST [shape=box, style="filled,rounded", fillcolor="#DEEBF7",
+        label="mwp_data.compute_stats()"];
+    SR [shape=box, style="filled,rounded", fillcolor="#DEEBF7",
+        label="mwp_data.save_summary_report()"];
+
+    subgraph cluster_viz {
+        label="mwp_viz.py — 4 panel functions"; style=dashed; color="#2E5B8A";
+        node [shape=box, style="filled,rounded", fillcolor="#DBE9F9", fontsize=10];
+        P1 [label="plot_technique_share"];
+        P2 [label="plot_material_types"];
+        P3 [label="plot_relevance"];
+        P4 [label="plot_geometries"];
+    }
+
+    SF [shape=box, style="filled,rounded", fillcolor="#DEEBF7",
+        label="main.save_figure()"];
+    WX [shape=box, style="filled,rounded", fillcolor="#DEEBF7",
+        label="write_xlsx.write()"];
+
+    RPT [shape=note, style=filled, fillcolor="#E2F0D9", label="report.txt"];
+    PNG [shape=note, style=filled, fillcolor="#E2F0D9", label="4 x panel_*.png"];
+    TAB [shape=note, style=filled, fillcolor="#E2F0D9",
+         label="classification table\nCSV + 4-sheet XLSX"];
+    JRN [shape=note, style=filled, fillcolor="#E2F0D9", label="journal.log"];
+
+    XLSX -> LD;
+    {T1 T2 T3 T4 T5 T6} -> LT [style=dotted];
+    LT -> LD;
+    LD -> DF -> ST;
+    ST -> SR -> RPT;
+    ST -> {P1 P2 P3 P4};
+    {P1 P2 P3 P4} -> SF -> PNG;
+    DF -> WX -> TAB;
+    LD -> JRN [style=dotted];
+    ST -> JRN [style=dotted];
+}

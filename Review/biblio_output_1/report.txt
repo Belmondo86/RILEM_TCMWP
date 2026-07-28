@@ -1,0 +1,27 @@
+==========================================================
+  BIBLIOMETRIC REPORT
+==========================================================
+  Articles analysed           : 140
+  Coverage period             : 1995 – 2025
+  Distinct journals / venues  : 76
+  Document types              :
+    · Journal articles          110
+    · Conference papers         22
+    · Book chapters             8
+  Mean authors / article      : 3.52
+  Articles with valid DOI     : 121
+
+  Top 5 journals / conferences :
+    · Construction and Building Materials                 14
+    · Road Materials and Pavement Design                  9
+    · Journal of Materials in Civil Engineering           7
+    · Journal of Testing and Evaluation                   7
+    · Transportation Research Record                      6
+
+  Top 5 authors (by article count) :
+    · I. Boz                          10
+    · M. Solaimanian                  10
+    · G. Cascante                     7
+    · J-C. Carret                     6
+    · H. Di Benedetto                 6
+==========================================================

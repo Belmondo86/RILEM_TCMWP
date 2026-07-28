@@ -1,0 +1,21 @@
+[2026-07-28 13:39:28] Output folder 'mwp_output' exists — non-interactive run, overwriting.
+[2026-07-28 13:39:28] load_tables(): 6 AI tables loaded from AI_tables/.
+[2026-07-28 13:39:28] load_dataset(): reading /mnt/project/input_RILEM_TC_MWP__Literature_Review_Form.xlsx
+[2026-07-28 13:39:29] load_dataset(): 109 review forms, 107 unique Article IDs, 742 form fields.
+[2026-07-28 13:39:29] QC: duplicate Article IDs (multiple reviews): ['P131', 'P95']
+[2026-07-28 13:39:29] QC: 2 form(s) without relevance rating: ['P51', 'P125']
+[2026-07-28 13:39:29] QC: year coverage 1995-2025.
+[2026-07-28 13:39:29] load_dataset(): merged 2 reviews for P131 (relevance: ['Low', 'Medium']).
+[2026-07-28 13:39:29] load_dataset(): merged 2 reviews for P95 (relevance: ['Low', 'Medium']).
+[2026-07-28 13:39:29] load_dataset(): article-level dataset n = 107.
+[2026-07-28 13:39:29] compute_stats(): technique: UT only: 73 (68.2%), IRT only: 27 (25.2%), UT + IRT: 1 (0.9%), Neither UT nor IRT: 6 (5.6%)
+[2026-07-28 13:39:29] compute_stats(): relevance: High: 39 (36.4%), Medium: 27 (25.2%), Low: 37 (34.6%), Not reported: 2 (1.9%), Low/Medium (2 reviews, discordant): 2 (1.9%)
+[2026-07-28 13:39:29] compute_stats(): materials (% of articles, multi-label): Hot Mix Asphalt (HMA): 76.6%, Cement-treated / hybrid material: 9.3%, Cold / emulsion-treated mixture: 3.7%, Cement concrete (incl. RA concrete): 3.7%, Other asphaltic material: 3.7%, Other / not specified: 3.7%, Warm Mix Asphalt (WMA): 1.9%, Binder only: 0.9%
+[2026-07-28 13:39:29] compute_stats(): geometries over n = 95 (multi-label): Cylinder / core: 62.1%, Prism / beam: 20.0%, Disc: 15.8%, Cube: 4.2%, Slab / plate: 4.2%, Field pavement / in-situ: 3.2%, Other / not specified: 1.1%, Semi-circular (half-moon): 1.1%
+[2026-07-28 13:39:29] save_summary_report(): mwp_output/report.txt
+[2026-07-28 13:39:29] run_local: classification table written (107 articles).
+[2026-07-28 13:39:29] save_figure(): panel_technique_share.png
+[2026-07-28 13:39:29] save_figure(): panel_material_types.png
+[2026-07-28 13:39:30] save_figure(): panel_relevance.png
+[2026-07-28 13:39:30] save_figure(): panel_geometries.png
+[2026-07-28 13:39:30] run_local: formatted XLSX workbook written.
