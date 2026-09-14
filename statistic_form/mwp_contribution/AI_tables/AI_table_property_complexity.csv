@@ -1,0 +1,18 @@
+id,tier,regex_pattern,label
+P01,advanced,2s2p1d|huet|burgers|prony|maxwell|complex poisson,constitutive/advanced parameters
+P02,viscoelastic,norm of the complex modulus|complex modulus|dynamic modulus,|E*| / dynamic modulus
+P03,viscoelastic,phase angle,phase angle
+P04,viscoelastic,damping,damping
+P05,viscoelastic,poisson,Poisson’s ratio
+P06,viscoelastic,storage|loss modulus,storage/loss modulus
+P07,viscoelastic,complex shear modulus|g\*,complex shear modulus
+P08,mechanical,young|elastic modulus|dynamic elastic,Young’s/elastic modulus
+P09,mechanical,resilient,resilient modulus
+P10,mechanical,stiffness,stiffness
+P11,mechanical,shear modulus,shear modulus
+P12,mechanical,impedance,mechanical impedance
+P13,mechanical,seismic modulus,seismic modulus
+P14,basic,velocit,wave velocity
+P15,basic,time.?of.?flight|flying time|\btof\b,ToF
+P16,basic,attenuation,attenuation
+P17,basic,natural frequenc|resonant frequenc,resonant frequency

@@ -1,0 +1,9 @@
+id,regex_pattern,exclude_pattern,category
+M01,^Hot Mixture Asphalt \(HMA\)$,,Hot Mixture Asphalt (HMA)
+M02,^Warm Mixture Asphalt \(WMA\)$,,Warm Mixture Asphalt (WMA)
+M03,^Cold mixture / emulsion-treated material$,,Cold mixture / emulsion-treated material
+M04,^Cement-treated or hybrid material$,,Cement-treated or hybrid material
+M05,numerical|simulated|finite.element,,Numerical / simulated asphalt material
+M06,portland|normal concrete|^concrete,asphalt concrete,Non-asphalt concrete material
+M07,(?=.*emulsion)(?=.*cement),,Cement-treated or hybrid material
+M08,.,,Other / special / unspecified asphalt material

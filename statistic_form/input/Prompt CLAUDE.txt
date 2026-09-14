@@ -1,0 +1,805 @@
+You will analyze an Excel spreadsheet containing systematic literature review forms related to the RILEM TC 331-MWP on Mechanical Wave Propagation methods in asphalt materials.
+
+IMPORTANT RULES:
+
+Use ONLY the information contained in the uploaded spreadsheet.
+Do NOT consult the original papers.
+Do NOT use external sources.
+Do NOT infer information that is not supported by the spreadsheet.
+Analyze ONLY the worksheet named “Final for analysis AI and code”.
+Write all outputs in English.
+Keep one row per paper.
+Preserve the original Paper ID exactly as provided in the spreadsheet.
+
+The objective is to classify each of the 155 papers according to its main contribution in one of three categories:
+
+Application Focus
+Testing Methodology Focus
+Data Analysis Type
+
+Each paper must receive exactly ONE Primary Contribution so that the final distribution always sums to 155 papers.
+
+A Secondary Contribution may also be reported when another contribution is clearly relevant, but the Secondary Contribution must not be used in the main distribution graph.
+
+1. MWP TECHNIQUE
+
+Use column AU.
+
+Classify each paper as:
+
+UT
+IR
+IR/UT
+Other / not explicitly UT or IR
+
+Rules:
+
+UT: column AU explicitly contains “Ultrasonic testing (UT)” only.
+IR: column AU explicitly contains “Impact resonance test (IRT)” only.
+IR/UT: both are explicitly reported.
+Other / not explicitly UT or IR: neither explicit term appears.
+
+Also extract the conventional/traditional tests reported in column AU after removing UT and IRT.
+
+Do not force papers without an explicit UT/IRT label into either category.
+
+2. TC MWP RELEVANCE
+
+Use column ABJ.
+
+Preserve exactly the classification reported in the form:
+
+High
+Medium
+Low
+Not reported
+
+IMPORTANT:
+
+TC MWP relevance is descriptive information only.
+
+It must NOT be used to calculate the technical contribution scores.
+
+3. APPLICATION CONTRIBUTION SCORE — 0 TO 3
+
+This score must positively evaluate whether the study mainly uses UT/IRT as an applied engineering tool.
+
+Application Focus must NOT be treated as a residual category assigned only when the other scores are low.
+
+Evaluate evidence such as:
+
+comparison between asphalt mixtures;
+effect of material composition;
+RAP/RAS;
+additives/modifiers;
+aging;
+moisture damage;
+cracking/damage;
+fatigue;
+rutting;
+density or air void evaluation;
+temperature effects;
+durability;
+field/pavement assessment;
+comparison with conventional tests;
+evaluation of engineering performance.
+
+Use:
+
+title and general study information contained in the review form;
+material information in H:AT;
+conventional tests reported in AU and the relevant conventional-test sections;
+reviewer-form information only as supporting interpretation, not as the score itself.
+
+Assign:
+
+0 — No clear Application contribution
+
+The study is not primarily using UT/IRT to evaluate an engineering/material condition.
+
+1 — Limited Application contribution
+
+An application is present, but it is secondary or weakly developed.
+
+2 — Clear Application contribution
+
+UT/IRT is clearly applied to assess materials, conditions, performance or comparison with conventional tests.
+
+3 — Strong Application contribution
+
+The main objective of the study is clearly an engineering/material application of UT/IRT, supported by several application elements such as multiple materials/conditions and/or conventional-test validation.
+
+4. EXPERIMENTAL METHODOLOGY CONTRIBUTION SCORE — 0 TO 3
+
+This evaluates how strongly the paper contributes to understanding, developing or documenting the execution of the UT/IRT test.
+
+For IR, analyze primarily:
+
+EF:EM
+
+Consider:
+
+excitation source;
+impact hammer/device;
+sensors;
+boundary conditions;
+vibration modes;
+reference method/standard;
+repetitions/impacts;
+temperature;
+methodological comments.
+
+For UT, analyze primarily:
+
+GM:GT
+
+and, when applicable:
+
+NA:NH
+
+Consider:
+
+transducer type/model;
+central frequency;
+wave type;
+transmission configuration;
+standard/reference;
+repetitions;
+temperature;
+methodological comments.
+
+Assign:
+
+0 — Almost no methodological contribution
+
+The test is merely mentioned or very poorly described.
+
+1 — Basic methodological contribution
+
+Some experimental information is reported, but the procedure cannot reasonably be reproduced.
+
+2 — Clear methodological contribution
+
+Several important test parameters are reported and the experimental procedure is well understood.
+
+3 — Strong methodological contribution
+
+The setup and procedure are described in detail, including most critical equipment/configuration/testing-condition information, allowing near-reproducibility.
+
+IMPORTANT:
+
+Do not give credit simply because a cell is populated.
+
+Responses such as “No”, “Not reported”, “Not specified”, “N/A”, etc. do not represent technical detail.
+
+5. DATA ANALYSIS CONTRIBUTION SCORE — 0 TO 3
+
+Data Analysis must evaluate the COMPLETE analysis chain:
+
+RAW WAVE SIGNAL → SIGNAL PROCESSING → PROPERTY/OUTPUT → PROPERTY IDENTIFICATION METHOD
+
+The Data Analysis score is composed of three sub-components:
+
+Signal Processing Score
+Property Complexity Score
+Identification Method Score
+
+These sub-scores explain the Data Analysis score but are NOT independent categories for the final Primary Contribution.
+
+5A. SIGNAL PROCESSING SCORE — 0 TO 2
+
+For IR, analyze primarily:
+
+EN:EP
+
+plus relevant comments in EQ and EY.
+
+For UT:
+
+GU:GW
+
+and/or
+
+NI:NK
+
+plus relevant comments.
+
+Identify methods such as:
+
+FFT/Fourier transform;
+ToF;
+filtering/windowing;
+FRF;
+coherence;
+modal analysis;
+peak selection/fitting;
+spectral analysis;
+phase processing;
+wavelet/time-frequency analysis.
+
+Assign:
+
+0 — Not described
+
+No substantive signal-processing procedure.
+
+1 — Basic processing
+
+Examples:
+
+FFT alone;
+direct ToF;
+simple filtering;
+basic transformations.
+
+2 — Detailed/advanced processing
+
+Examples:
+
+FRF;
+coherence;
+detailed frequency-response analysis;
+modal analysis;
+wavelet/time-frequency treatment;
+combined advanced processing.
+5B. PROPERTY COMPLEXITY SCORE — 0 TO 3
+
+Identify WHAT was obtained from UT/IRT.
+
+For IR, use primarily:
+
+ER
+
+For UT:
+
+GY
+
+and/or
+
+NM
+
+Also consider relevant technical comments.
+
+Assign:
+
+0 — Basic wave output
+
+Examples:
+
+wave velocity;
+P-wave/S-wave velocity;
+ToF;
+attenuation;
+natural/resonant frequency.
+
+1 — Mechanical property
+
+Examples:
+
+Young’s modulus;
+elastic modulus;
+resilient modulus;
+stiffness;
+shear modulus;
+mechanical impedance.
+
+2 — Viscoelastic property
+
+Examples:
+
+dynamic modulus;
+complex modulus;
+phase angle;
+damping;
+Poisson’s ratio;
+storage/loss modulus.
+
+3 — Advanced/multiple viscoelastic or constitutive information
+
+Examples:
+
+several viscoelastic properties identified together;
+complex Poisson’s ratio;
+rheological model parameters;
+2S2P1D parameters;
+Huet parameters;
+Burgers parameters;
+Prony-series parameters;
+generalized Maxwell parameters;
+other advanced constitutive parameters.
+
+IMPORTANT:
+
+An advanced property by itself does NOT automatically make the paper Data Analysis Type.
+
+HOW the property was identified must also be evaluated.
+
+5C. PROPERTY IDENTIFICATION METHOD SCORE — 0 TO 3
+
+This answers:
+
+HOW was the mechanical/rheological property obtained?
+
+For IR, analyze primarily:
+
+ES:EX
+
+For UT:
+
+GZ:HG
+
+and/or
+
+NN:NU
+
+Also use technical reviewer notes when necessary to understand the method.
+
+Assign:
+
+0 — Not described
+
+The property is reported but the calculation/identification procedure is unclear.
+
+1 — Direct/basic identification
+
+Examples:
+
+direct analytical equation;
+wave equation;
+closed-form solution;
+ToF equation;
+standard equation;
+empirical correlation;
+regression/calibration equation.
+
+2 — Detailed signal-based identification
+
+Examples:
+
+FRF-based identification;
+modal identification;
+resonance-peak fitting;
+detailed frequency-response identification.
+
+3 — Advanced numerical/inverse identification
+
+Examples:
+
+inverse analysis;
+FEM-based back-analysis;
+numerical inverse analysis;
+optimization;
+iterative identification;
+model updating;
+backcalculation;
+coupled experimental–numerical identification.
+
+IMPORTANT:
+
+FEM alone is NOT sufficient for Score 3.
+
+FEM must actually be used as part of a property-identification or inverse/back-analysis procedure.
+
+5D. FINAL DATA ANALYSIS CONTRIBUTION SCORE
+
+Combine Signal Processing, Property Complexity and Identification Method.
+
+Assign:
+
+0 — No meaningful analysis chain
+
+No substantive link from MWP measurement to identified output/property.
+
+1 — Basic/direct Data Analysis contribution
+
+Typical examples:
+
+FFT alone;
+ToF;
+simple analytical equations;
+simple regression;
+basic output calculation.
+
+2 — Clear Data Analysis contribution
+
+There must be a meaningful property and a sufficiently described signal-processing or identification method.
+
+Typical examples:
+
+FRF/modal analysis used to identify a property;
+detailed frequency-domain analysis;
+viscoelastic property obtained through a clearly described analytical/signal-based procedure.
+
+3 — Strong/advanced Data Analysis contribution
+
+Require BOTH:
+
+a meaningful mechanical/viscoelastic property;
+an advanced identification method such as inverse analysis, numerical back-analysis, optimization or equivalent.
+
+Do NOT assign Data Analysis = 3 only because the paper contains terms such as:
+
+FFT;
+FEM;
+complex modulus;
+numerical model.
+
+These elements must form a clear property-identification methodology.
+
+6. RHEOLOGICAL MODELLING SCORE — 0 TO 2
+
+Analyze:
+
+AAY:ABC
+
+Consider:
+
+rheological model;
+TTSP;
+shift-factor equation;
+master curves;
+modelling purpose;
+model calibration/validation.
+
+Assign:
+
+0 — No rheological modelling
+
+1 — Limited rheological modelling
+
+A model or modelling purpose is reported but with limited information.
+
+2 — Detailed rheological modelling
+
+The model is supported by information such as TTSP, shift factors, master curves, calibration or explicit modelling objectives.
+
+This score is descriptive/supporting.
+
+It does NOT independently determine the Primary Contribution.
+
+7. REVIEWER ASSESSMENT
+
+Retain:
+
+Reviewer Support Score;
+ABK — Key Contribution;
+ABL — Reviewer Notes.
+
+Reviewer Support may be classified descriptively as:
+
+0 = low/limited support;
+1 = moderate;
+2 = strong support.
+
+CRITICAL RULE:
+
+Reviewer Assessment must NOT be used to calculate Application, Methodology or Data Analysis Contribution Scores.
+
+Reviewer Assessment is used ONLY as a tie-break criterion when two or more technical contribution scores are tied for the highest value.
+
+Tie-break procedure:
+
+First calculate:
+Application Contribution Score;
+Methodology Contribution Score;
+Data Analysis Contribution Score.
+If one score is highest:
+assign that category as Primary Contribution;
+do NOT use reviewer comments.
+If two or three technical scores are tied for the highest score:
+read ABK — Key Contribution;
+read ABL — Reviewer Notes;
+determine which of the tied categories is most strongly emphasized.
+Reviewer comments MUST NOT alter the numerical technical scores.
+If ABK/ABL still do not resolve the tie:
+use the richer technical evidence from the relevant spreadsheet sections;
+flag the classification as lower confidence.
+8. PRIMARY CONTRIBUTION
+
+Every paper must receive exactly ONE Primary Contribution:
+
+Application Focus
+Testing Methodology Focus
+Data Analysis Type
+
+General decision:
+
+highest technical contribution score → Primary Contribution;
+tie → ABK/ABL reviewer assessment used only as tie-break.
+
+The final distribution of Primary Contribution must contain exactly 155 papers.
+
+9. SECONDARY CONTRIBUTION
+
+Also report a Secondary Contribution when another contribution is meaningful.
+
+Rule:
+
+A Secondary Contribution should normally be reported only when the second-highest technical contribution score is ≥2.
+
+Possible values:
+
+Application Focus
+Testing Methodology Focus
+Data Analysis Type
+None
+
+Secondary Contribution does NOT enter the main classification graph.
+
+10. CLASSIFICATION CONFIDENCE
+
+Report:
+
+High
+
+One technical contribution score is clearly dominant.
+
+Medium
+
+A tie occurred and ABK/ABL successfully resolved it.
+
+Low
+
+The technical scores were tied and reviewer comments did not uniquely resolve the case, requiring additional interpretation of the technical form responses.
+
+Also include:
+
+Tie-break Used?
+
+Yes
+No
+
+and:
+
+Tie-break Reason
+
+briefly explaining the decision.
+
+11. MATERIAL TYPE
+
+Use ONLY columns H:AT.
+
+Material-type fields include primarily:
+
+H
+P
+X
+AF
+AN
+
+Normalize obvious equivalent responses into:
+
+Hot Mixture Asphalt (HMA)
+Warm Mixture Asphalt (WMA)
+Cold mixture / emulsion-treated material
+Cement-treated or hybrid material
+Numerical / simulated asphalt material
+Non-asphalt concrete material
+Other / special / unspecified asphalt material
+
+A paper may report more than one material type.
+
+For each material category report:
+
+category;
+paper count;
+percentage of 155 papers;
+Paper IDs.
+12. SPECIMEN GEOMETRY
+
+Use all spreadsheet columns containing “Geometry” in the header.
+
+Normalize obvious equivalent terms into:
+
+Cylinder
+Disc
+Prism / beam
+Slab / plate
+Cube
+Half-moon / SCB
+Trapezoidal
+In situ / pavement
+Other / special / unspecified
+
+A paper may contain more than one geometry.
+
+Report:
+
+category;
+paper count;
+percentage;
+Paper IDs.
+13. EMPTY COLUMNS
+
+Identify all columns that are blank for ALL 155 papers.
+
+A column is completely empty only when every paper cell is blank or null.
+
+Do NOT treat:
+
+No
+Not reported
+Not applicable
+
+as empty cells.
+
+Return:
+
+Excel column letter;
+exact form-column title.
+14. REQUIRED MAIN OUTPUT TABLE
+
+Create one row per paper containing at least:
+
+Paper ID
+Authors
+Year
+Title
+MWP Technique
+Traditional test(s) also performed
+TC MWP Relevance
+Application Contribution Score (0–3)
+Application Evidence
+Experimental Methodology Contribution Score (0–3)
+Methodology Evidence
+Data Analysis Contribution Score (0–3)
+Signal Processing Score (0–2)
+Property Complexity Score (0–3)
+Identification Method Score (0–3)
+Signal Processing Type(s)
+Property / Output Type(s)
+Property Identification Method(s)
+Raw Property Description
+Raw Identification Method Description
+Rheological Modelling Score (0–2)
+Rheological Model(s)
+Rheological Modelling Purpose
+Reviewer Support Score (0–2)
+ABK — Key Contribution
+ABL — Reviewer Notes
+Primary Contribution
+Secondary Contribution
+Tie-break Used?
+Tie-break Reason
+Classification Confidence
+Material Type(s)
+Specimen Geometry Type(s)
+Classification Rationale
+15. COLOR CODE FOR THE EXCEL OUTPUT
+
+Use the following visual organization:
+
+Blue
+
+Application Contribution
+
+Green
+
+Experimental Methodology Contribution
+
+Red
+
+Data Analysis Contribution
+
+Light red
+
+Signal Processing
+Property Complexity
+Identification Method
+
+These three are sub-components of Data Analysis.
+
+Purple
+
+Rheological Modelling
+
+Orange
+
+Reviewer Assessment:
+
+Reviewer Support
+ABK
+ABL
+
+Clearly state in the workbook:
+
+“Reviewer Assessment is used ONLY as a tie-break criterion and does not affect the technical contribution scores.”
+
+16. REQUIRED SUMMARY TABLES
+
+Create separate summary tables for:
+
+MWP Technique
+TC MWP Relevance
+Primary Contribution
+Secondary Contribution
+Material Type
+Specimen Geometry
+Signal Processing Type
+Property / Output Type
+Property Identification Method
+
+Each summary should contain:
+
+Category
+Paper Count
+Percentage
+Paper IDs
+
+Material, geometry, processing, properties and identification methods are non-exclusive, so their percentages do not need to sum to 100%.
+
+17. PAPERS WITHOUT EXPLICIT UT/IRT
+
+Create a separate table for papers classified as:
+
+Other / not explicitly UT or IR
+
+Include:
+
+Paper ID
+Authors
+Year
+Title
+tests reported in AU
+TC MWP Relevance
+ABK Key Contribution
+ABL Reviewer Notes
+
+Do not artificially reclassify these papers as UT or IR.
+
+18. REQUIRED GRAPHS
+
+Generate:
+
+UT only vs IRT only vs both
+TC MWP relevance distribution
+Primary Contribution distribution
+Material types
+Specimen geometries
+Properties / outputs obtained from UT/IRT
+Property identification methods
+Distribution of Application Contribution Scores
+Distribution of Methodology Contribution Scores
+Distribution of Data Analysis Contribution Scores
+
+For the UT/IRT graph, exclude “Other / not explicitly UT or IR” from the UT/IRT/Both denominator, but report separately how many papers were excluded.
+
+FINAL INTERPRETATION PRINCIPLE
+
+Always distinguish:
+
+WHAT IS THE PAPER TRYING TO DO?
+
+→ Application Contribution
+
+HOW WELL IS THE TEST PROCEDURE DEVELOPED/DESCRIBED?
+
+→ Testing Methodology Contribution
+
+HOW ARE THE WAVE DATA TRANSFORMED INTO MECHANICAL/RHEOLOGICAL INFORMATION?
+
+→ Data Analysis Contribution
+
+Within Data Analysis, always distinguish:
+
+HOW WAS THE SIGNAL PROCESSED?
+
+→ Signal Processing
+
+WHAT PROPERTY WAS OBTAINED?
+
+→ Property Complexity
+
+HOW WAS THAT PROPERTY CALCULATED/IDENTIFIED?
+
+→ Identification Method
+
+Do not confuse these concepts.
+
+The classification evaluates the type and strength of contribution documented in the review form, not the intrinsic scientific quality of the original article.
+
+When information is unclear, state:
+
+“Unclear from the review form”
+
+instead of making unsupported assumptions.

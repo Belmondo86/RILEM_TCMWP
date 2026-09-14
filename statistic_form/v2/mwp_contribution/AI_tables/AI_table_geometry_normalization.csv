@@ -1,0 +1,15 @@
+id,regex_pattern,category
+G01,does not specify|six samples,Other / special / unspecified
+G02,backcalculation,In situ / pavement
+G03,simulated|finite.element,Other / special / unspecified
+G04,in.?situ|in\u2011situ|field|road|pavement,In situ / pavement
+G05,demi-cylinder,Other / special / unspecified
+G06,\bsgc\b|gyratory|^cylinder$|cylindrical,Cylinder
+G07,disc,Disc
+G08,prism|parallepiped|beam,Prism / beam
+G09,slab|plate,Slab / plate
+G10,cub,Cube
+G11,half-moon|semi-circular|scb,Half-moon / SCB
+G12,trapezoidal,Trapezoidal
+G13,probably cylinder|not explicitly mentioned,IGNORE
+G14,.,Other / special / unspecified

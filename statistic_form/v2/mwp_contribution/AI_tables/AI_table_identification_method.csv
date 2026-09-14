@@ -1,0 +1,4 @@
+id,score_level,regex_pattern,label
+I01,3,inverse analysis|numerical inverse|back.?analysis|back.?calculat|optimi[sz]|model updating|iterative identific,numerical inverse / back-analysis
+I02,2,\bfrf\b|modal identific|resonance.?peak fitting|half.?power bandwidth|frequency.?response identific,detailed signal-based (FRF/modal/peak-based)
+I03,1,analytical method based on closed.?form|closed.?form|wave equation|standard equation|astm|empirical|regression|correlation|calibration equation|e\s*=\s*0?\.?\d,direct analytical / empirical equation

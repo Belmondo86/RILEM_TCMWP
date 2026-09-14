@@ -1,0 +1,17 @@
+Loaded 'Final for analysis AI and code': 155 rows x 742 columns
+Classified 155 papers
+TEST PASS — 155 papers, one row each n=155
+TEST PASS — Paper IDs unique and preserved unique=155
+TEST PASS — Primary distribution sums to 155 {'Application Focus': 70, 'Testing Methodology Focus': 65, 'Data Analysis Type': 20}
+TEST PASS — Every Primary is one of the 3 categories 
+TEST PASS — Primary=max score; Secondary only when 2nd >= 2 violations=0
+TEST PASS — DA=3 implies PropC>=1 and IdM=3 
+TEST PASS — All scores within their defined ranges 
+TEST PASS — Papers without explicit UT/IRT kept separate ['P29', 'P101', 'P53', 'P21']
+Results CSV: c:\users\belmokhtar\documents\github\rilem_tcmwp\statistic_form\v2\mwp_contribution\classification_output\classification_results.csv
+Workbook: c:\users\belmokhtar\documents\github\rilem_tcmwp\statistic_form\v2\mwp_contribution\classification_output\TC331_MWP_155papers_classification.xlsx (354 empty form columns)
+Figures: 10 files in c:\users\belmokhtar\documents\github\rilem_tcmwp\statistic_form\v2\mwp_contribution\classification_output\figures
+MWP Technique: {'UT': 103, 'IR': 45, 'Other / not explicitly UT or IR': 4, 'IR/UT': 3}
+TC MWP Relevance: {'High': 61, 'Medium': 46, 'Low': 46, 'Not reported': 2}
+Primary: {'Application Focus': 70, 'Testing Methodology Focus': 65, 'Data Analysis Type': 20}
+Confidence: {'High': 84, 'Medium': 48, 'Low': 23}

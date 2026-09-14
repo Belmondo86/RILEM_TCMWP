@@ -1,0 +1,18 @@
+id,level,regex_pattern,label
+S01,advanced,\bfrf\b|frequency response function,FRF
+S02,advanced,coherence,coherence
+S03,advanced,modal,modal analysis
+S04,advanced,wavelet,wavelet
+S05,advanced,\bstft\b|time.?frequency,time-frequency
+S06,advanced,hilbert,Hilbert transform
+S07,advanced,f.?k.? transform|wavenumber|dispersion curve,f-k / dispersion analysis
+S08,advanced,spectral ratio,spectral ratio
+S09,advanced,harmonic amplitude|nonlinear.*paramet,harmonic/nonlinearity analysis
+S10,basic,\bfft\b|fourier,FFT
+S11,basic,time.?of.?flight|\btof\b,ToF picking
+S12,basic,filter,filtering
+S13,basic,window,windowing
+S14,basic,zero.?padding,zero-padding
+S15,basic,averag,averaging
+S16,basic,weighting function,weighting functions
+S17,basic,peak (selection|picking|fitting),peak selection

@@ -1,0 +1,13 @@
+id,regex_pattern,evidence_label
+A01,\brap\b|reclaimed asphalt|\bras\b|recycl,RAP/RAS or recycled materials
+A02,additive|modifi|polymer|sbs|crumb rubber|fiber|epoxy|rejuvenat,additives/modifiers
+A03,\bag(e|ing|ed)\b|oxidation,aging
+A04,moisture|water damage|freeze|thaw|conditioning,moisture/conditioning
+A05,crack|damage|healing|micro-?crack,cracking/damage
+A06,fatigue,fatigue
+A07,rutting|permanent deformation,rutting
+A08,air void|density|compaction|porosity,density/air-void evaluation
+A09,durab,durability
+A10,field|in.?situ|pavement (?:section|layer|assess|evaluat|monitor)|road ,field/pavement assessment
+A11,quality control|qc\b|non.?destructive evaluation,QC / NDE
+A12,mixture(s)? (?:comparison|design)|different (?:mixtures|asphalt),mixture comparison

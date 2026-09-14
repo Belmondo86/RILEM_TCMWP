@@ -1,0 +1,4 @@
+id,category,regex_pattern
+T01,Application Focus,aging|moisture|rap\b|recycl|crack|damage|fatigue|rutting|air void|densit|field|pavement|quality control|assess|evaluat|monitor|durab|mixture|additive|comparison with (conventional|e\*|complex modulus)
+T02,Testing Methodology Focus,methodolog|procedure|protocol|setup|set-up|repeatab|test method|boundary condition|transducer|sensor|excitation|configuration|standard
+T03,Data Analysis Type,signal processing|inverse|back.?analys|back.?calculat|frf|modal|identif|master.?curve|complex modulus determin|viscoelastic|optimi[sz]|algorithm|processing

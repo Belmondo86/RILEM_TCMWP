@@ -1,0 +1,2 @@
+id,regex_pattern,comment
+N001,^(no|no\.|none|n/?a|not applicable|not reported\.?|not specified\.?|not mentioned\.?|unclear|-+|nothing specific|not clearly reported.*|none reported\.?|none presented\.?|not reported.*not specified.*)$,Exact non-informative answers
