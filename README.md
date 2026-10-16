@@ -8,25 +8,6 @@
 
 ---
 
-## Repository contents
-
-```
-/
-├── README.md                  ← this file
-│
-├── biblio_local/              ← bibliometric analysis of the DOI_MWP corpus
-│   ├── README.md              ← how to use this module
-│   ├── run_local.py           ← the only file you need to run
-│   ├── AI_tables/             ← classification tables — open in Excel to correct
-│   └── biblio_output/         ← example figures and report
-│
-└── [more modules to come]/
-```
-
-Each module has its own `README.md` — start there for usage instructions.
-
----
-
 ## Methodology — AI-assisted iterative development
 
 ### The idea in one sentence
